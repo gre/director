@@ -1,7 +1,7 @@
 
 
 //
-// Generated on Fri Dec 27 2013 12:02:11 GMT-0500 (EST) by Nodejitsu, Inc (Using Codesurgeon).
+// Generated on Mon Feb 17 2014 17:49:41 GMT+0100 (CET) by Nodejitsu, Inc (Using Codesurgeon).
 // Version 1.2.2
 //
 
@@ -495,7 +495,7 @@ Router.prototype.invoke = function(fns, thisArg, callback) {
       if (Array.isArray(fn)) {
         return _asyncEverySeries(fn, apply, next);
       } else if (typeof fn == "function") {
-        fn.apply(thisArg, fns.captures.concat(next));
+        fn.apply(thisArg, (fns.captures || []).concat(next));
       }
     };
     _asyncEverySeries(fns, apply, function() {
